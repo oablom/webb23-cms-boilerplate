@@ -1,11 +1,10 @@
 import { getStoryblokApi } from "@storyblok/react/rsc";
 
 export class StoryblokCMS {
-
   static IS_PROD = process.env.NODE_ENV === "production";
   static IS_DEV = process.env.NODE_ENV === "development";
   static VERSION = this.IS_PROD ? "published" : "draft";
-  static TOKEN = process.env.NEXT_PUBLIC_PREVIEW_STORYBLOK_TOKEN;
+  static TOKEN = process.env.NEXT_PUBLIC_PREVIEW_TOKEN;
 
   static async sbGet(path, params) {
     return getStoryblokApi().get(path, params);
@@ -40,7 +39,7 @@ export class StoryblokCMS {
     return {
       title: "Title",
       description: "Description",
-    }
+    };
   }
 
   //Generates static paths from Links API endpoint
