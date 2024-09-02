@@ -1,5 +1,4 @@
 import { getStoryblokApi } from "@storyblok/react/rsc";
-
 export class StoryblokCMS {
   static IS_PROD = process.env.NODE_ENV === "production";
   static IS_DEV = process.env.NODE_ENV === "development";
@@ -14,7 +13,10 @@ export class StoryblokCMS {
     if (!params) return {};
     const uri = params?.slug?.join("/");
     const storyUrl = "cdn/stories/" + uri;
-    const { data } = await this.sbGet(storyUrl, this.getDefaultSBParams());
+    const { data } = await this.sbGet(
+      storyUrl,
+      this.getDefaultSBParams()
+    );
     return data.story;
   }
 
@@ -27,12 +29,21 @@ export class StoryblokCMS {
   }
 
   static async getConfig() {
-    const { data } = await this.sbGet("cdn/stories/config");
-    return data.story;
+    try {
+      const { data } = await this.sbGet(
+        "cdn/stories/config",
+        this.getDefaultSBParams()
+      );
+      return data?.story;
+    } catch (error) {
+      console.log("CONFIG ERROR", error);
+      return {};
+    }
   }
 
   static async generateMetaFromStory(slug) {
     //Read nextjs metadata docs
+    //1. Add Seo fields to Page component in storyblok (in own tab)
     //1. Fetch the story from Storyblok (make sure that page content-type has metadata)
     //2. Extract the metadata from the story
     //3. Return the metadata object
