@@ -15,7 +15,7 @@ export default function About({ blok }) {
               layout="responsive"
               width={100}
               height={50}
-              className="w-full h-auto mx-auto rounded-lg shadow-lg"
+              className=" w-full h-auto mx-auto rounded-lg shadow-lg"
             />
           </div>
         )}

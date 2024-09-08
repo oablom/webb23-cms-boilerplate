@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import "@/components/styling/index.css";
+// import "@/components/styling/index.css";
 
 export default function ImageWithText({ blok }) {
   return (

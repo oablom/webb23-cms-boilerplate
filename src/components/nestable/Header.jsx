@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import "@/components/styling/index.css";
+// import "@/components/styling/index.css";
 
 import { useEffect, useState } from "react";
 
