@@ -4,21 +4,22 @@ import { StoryblokCMS } from "@/utils/cms";
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 import Page from "@/components/content-types/Page";
 import Teaser from "@/components/nestable/Teaser";
-// import RichText from "@/components/nestable/RichText";
-// import HeaderConfig from "@/components/HeaderConfig";
 import Hero from "@/components/nestable/Hero";
 import Footer from "@/components/nestable/Footer";
+import Header from "@/components/nestable/Header";
+import Grid from "@/components/nestable/Grid";
+import ImageWithText from "@/components/nestable/ImageWithText";
+import About from "@/components/nestable/About";
 
 const components = {
   page: Page,
   teaser: Teaser,
   hero: Hero,
-  // feature: Feature,
-  // grid: Grid,
-  // Config: HeaderConfig,
+  header: Header,
   footer: Footer,
-  // ImageWithText: ImageWithText,
-  // menu_links: MenuLinks,
+  grid: Grid,
+  image_with_text: ImageWithText,
+  about: About,
 };
 
 storyblokInit({

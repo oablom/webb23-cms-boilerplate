@@ -1,5 +1,48 @@
-export default function NotFound() {
-    //Fetch the 404 page from storyblok (this component works as server component aswell)
-    //update this component to render a 404 page
-    return <h1>404 notfound</h1>
+import { StoryblokCMS } from "@/utils/cms";
+import StoryblokStory from "@storyblok/react/story";
+// import Link from "next/link";
+
+export async function generateMetadata() {
+  return StoryblokCMS.generateMetaFromStory("404");
 }
+
+export default async function NotFoundPage({}) {
+  try {
+    const currentStory = await StoryblokCMS.getStory({ slug: ["404"] });
+
+    if (!currentStory) {
+      return (
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="bg-white p-8 rounded-lg shadow-md max-w-lg w-full">
+            <h1 className="text-lg font-bold mt-4 text-center">
+              404 - Sidan hittades inte
+            </h1>
+            <p className="py-2 text-center">
+              Tyvärr, sidan du letar efter finns inte.
+            </p>
+          </div>
+        </div>
+      );
+    }
+
+    return <StoryblokStory story={currentStory} />;
+  } catch (error) {
+    console.error("Ett fel uppstod:", error);
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="bg-white p-8 rounded-lg shadow-md max-w-lg w-full">
+          <h1 className="text-lg font-bold mt-4 text-center">
+            404 - Sidan hittades inte
+          </h1>
+          <p className="py-2 text-center">
+            The page you're looking for doesn't exist.
+          </p>
+        </div>
+      </div>
+    );
+  }
+}
+
+export const dynamic = StoryblokCMS.isDevelopment
+  ? "force-dynamic"
+  : "force-static";

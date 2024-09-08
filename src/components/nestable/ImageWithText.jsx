@@ -1,3 +1,5 @@
+import "../styling/index.css";
+
 export default function ImageWithText({ blok }) {
   return (
     <div className="flex flex-col md:flex-row items-center gap-8 p-8">
