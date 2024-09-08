@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { StoryblokComponent } from "@storyblok/react/rsc";
-import "@/components/styling/index.css";
+// import "@/components/styling/index.css";
 
 // Content-type component (acts as template for all pages)
 export default function Page({ blok }) {
