@@ -8,7 +8,7 @@ export async function generateMetadata() {
 
 export default async function StartPage({}) {
   try {
-    const currentStory = await StoryblokCMS.getStory({ slug: ["home"] });
+    const currentStory = await StoryblokCMS.getStory({ slug: ["product"] });
     if (!currentStory) throw new Error();
 
     return <StoryblokStory story={currentStory} />;
@@ -16,4 +16,6 @@ export default async function StartPage({}) {
     notFound();
   }
 }
-export const dynamic = StoryblokCMS.isDevelopment ? "force-dynamic" : "force-static";
+export const dynamic = StoryblokCMS.isDevelopment
+  ? "force-dynamic"
+  : "force-static";
