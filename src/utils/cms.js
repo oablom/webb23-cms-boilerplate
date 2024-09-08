@@ -13,10 +13,7 @@ export class StoryblokCMS {
     if (!params) return {};
     const uri = params?.slug?.join("/");
     const storyUrl = "cdn/stories/" + uri;
-    const { data } = await this.sbGet(
-      storyUrl,
-      this.getDefaultSBParams()
-    );
+    const { data } = await this.sbGet(storyUrl, this.getDefaultSBParams());
     return data.story;
   }
 
@@ -48,7 +45,7 @@ export class StoryblokCMS {
     //2. Extract the metadata from the story
     //3. Return the metadata object
     return {
-      title: "Title",
+      title: "Spookiness",
       description: "Description",
     };
   }
