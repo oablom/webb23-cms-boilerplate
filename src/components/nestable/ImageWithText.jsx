@@ -1,4 +1,4 @@
-import "../styling/index.css";
+import "@/components/styling/index.css";
 
 export default function ImageWithText({ blok }) {
   return (

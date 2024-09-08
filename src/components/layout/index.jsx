@@ -1,5 +1,5 @@
 //Uses config set global components for the layout
-import "../styling/index.css";
+import "@/components/styling/index.css";
 import Header from "../nestable/Header";
 // import Footer from "../nestable/Footer";
 export default function Layout({ config, children }) {
