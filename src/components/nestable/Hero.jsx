@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Hero({ blok }) {
   console.log(blok);
   return (
@@ -12,10 +14,13 @@ export default function Hero({ blok }) {
 
       <div className="md:w-1/2 flex justify-center">
         {blok.image && (
-          <img
+          <Image
             src={blok.image.filename}
             alt={blok.image.alt || "Image"}
+            layout="responsive"
             className="w-full max-w-md h-auto"
+            width={100}
+            height={50}
           />
         )}
       </div>

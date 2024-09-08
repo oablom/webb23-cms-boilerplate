@@ -15,10 +15,10 @@ export default async function NotFoundPage({}) {
         <div className="min-h-screen flex items-center justify-center">
           <div className="bg-white p-8 rounded-lg shadow-md max-w-lg w-full">
             <h1 className="text-lg font-bold mt-4 text-center">
-              404 - Sidan hittades inte
+              404 - Site not found
             </h1>
             <p className="py-2 text-center">
-              Tyvärr, sidan du letar efter finns inte.
+              The page you're looking for doesn't exist.
             </p>
           </div>
         </div>
@@ -32,7 +32,7 @@ export default async function NotFoundPage({}) {
       <div className="min-h-screen flex items-center justify-center">
         <div className="bg-white p-8 rounded-lg shadow-md max-w-lg w-full">
           <h1 className="text-lg font-bold mt-4 text-center">
-            404 - Sidan hittades inte
+            404 - Site not found
           </h1>
           <p className="py-2 text-center">
             The page you're looking for doesn't exist.

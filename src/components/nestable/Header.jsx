@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 
 import "@/components/styling/index.css";
 
@@ -25,10 +26,13 @@ export default function Header({ config }) {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex items-center">
             {config?.content?.body[0].logo && (
-              <img
+              <Image
                 src={config.content.body[0].logo.filename}
                 alt={"logo"}
-                className="h-8 mr-3"
+                // layout="responsive"
+                width={100}
+                height={50}
+                className="w-full h-8 mr-3"
               />
             )}
           </div>

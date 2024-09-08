@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function About({ blok }) {
   return (
     <section className="py-12 px-6 md:px-16  text-center">
@@ -7,9 +9,12 @@ export default function About({ blok }) {
 
         {blok.image && (
           <div className="mb-8">
-            <img
+            <Image
               src={blok.image.filename}
               alt={blok.image.alt || "About image"}
+              layout="responsive"
+              width={100}
+              height={50}
               className="w-full h-auto mx-auto rounded-lg shadow-lg"
             />
           </div>
